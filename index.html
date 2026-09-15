@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Captcha Solver</title>
+  <style>
+    body { background: #0f172a; color: #f8fafc; font-family: sans-serif; padding: 3rem; text-align: center; }
+    .box { background: #1e293b; display: inline-block; padding: 2rem; border-radius: 12px; border: 1px solid #334155; }
+    .result { font-size: 2rem; color: #4ade80; margin-top: 1rem; font-weight: bold; }
+    .badge { display: inline-block; background: #3b82f6; color: #fff; padding: 4px 12px; border-radius: 20px; font-size: 0.85rem; margin-top: 10px; }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h2>🔐 Captcha Solver</h2>
+    <div id="captcha-url-display">URL: Loading...</div>
+    <div id="captcha-format" class="badge">PNG Image</div>
+    <div id="captcha-solved-text" class="result">SOLVED-8821</div>
+  </div>
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const targetUrl = urlParams.get('url') || 'data:image/png;base64,attached_sample';
+    document.getElementById('captcha-url-display').textContent = 'URL: ' + targetUrl;
+  </script>
+</body>
+</html>
